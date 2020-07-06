@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.viewmodel;
 
 import android.app.Application;
 
@@ -7,6 +7,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+
+import yskim.sample.architectureexample.model.repository.NoteRepository;
+import yskim.sample.architectureexample.model.db.Note;
 
 public class NoteViewModel extends AndroidViewModel {
 

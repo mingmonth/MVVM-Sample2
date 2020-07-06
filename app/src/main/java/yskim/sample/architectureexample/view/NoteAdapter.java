@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
+import yskim.sample.architectureexample.R;
+import yskim.sample.architectureexample.model.db.Note;
 
 public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
     //private List<Note> notes = new ArrayList<>();

@@ -1,12 +1,15 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.model.repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
-import android.provider.ContactsContract;
 
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
+
+import yskim.sample.architectureexample.model.db.Note;
+import yskim.sample.architectureexample.model.db.NoteDao;
+import yskim.sample.architectureexample.model.db.NoteDatabase;
 
 public class NoteRepository {
 

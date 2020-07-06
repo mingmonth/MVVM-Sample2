@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
+
+import yskim.sample.architectureexample.R;
 
 public class AddEditNoteActivity extends AppCompatActivity {
     public static final String EXTRA_ID =

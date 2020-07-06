@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.view;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +20,10 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
+
+import yskim.sample.architectureexample.viewmodel.NoteViewModel;
+import yskim.sample.architectureexample.R;
+import yskim.sample.architectureexample.model.db.Note;
 
 public class MainActivity extends AppCompatActivity {
     public static final int  ADD_NOTE_REQUEST = 1;

@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.model.db;
 
 import android.content.Context;
 import android.os.AsyncTask;

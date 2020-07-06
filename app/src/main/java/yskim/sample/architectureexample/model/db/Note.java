@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.model.db;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

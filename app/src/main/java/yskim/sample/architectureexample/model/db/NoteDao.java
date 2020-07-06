@@ -1,4 +1,4 @@
-package yskim.sample.architectureexample;
+package yskim.sample.architectureexample.model.db;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -8,6 +8,8 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
+
+import yskim.sample.architectureexample.model.db.Note;
 
 @Dao
 public interface NoteDao {
