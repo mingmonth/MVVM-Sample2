@@ -9,7 +9,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import yskim.sample.architectureexample.model.db.Note;
+import yskim.sample.architectureexample.model.db.entities.Note;
 
 @Dao
 public interface NoteDao {

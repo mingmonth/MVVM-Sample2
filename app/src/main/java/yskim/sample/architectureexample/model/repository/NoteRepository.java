@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import yskim.sample.architectureexample.model.db.Note;
+import yskim.sample.architectureexample.model.db.entities.Note;
 import yskim.sample.architectureexample.model.db.NoteDao;
 import yskim.sample.architectureexample.model.db.NoteDatabase;
 

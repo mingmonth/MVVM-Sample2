@@ -23,7 +23,7 @@ import java.util.List;
 
 import yskim.sample.architectureexample.viewmodel.NoteViewModel;
 import yskim.sample.architectureexample.R;
-import yskim.sample.architectureexample.model.db.Note;
+import yskim.sample.architectureexample.model.db.entities.Note;
 
 public class MainActivity extends AppCompatActivity {
     public static final int  ADD_NOTE_REQUEST = 1;
@@ -136,6 +136,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.delete_all_notes:
                 noteViewModel.deleteAllNotes();
                 Toast.makeText(this, "All notes deleted", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.retrofit_main:
+                Intent intent = new Intent(MainActivity.this, RetrofitMainActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

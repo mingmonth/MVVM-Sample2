@@ -9,7 +9,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import yskim.sample.architectureexample.model.repository.NoteRepository;
-import yskim.sample.architectureexample.model.db.Note;
+import yskim.sample.architectureexample.model.db.entities.Note;
 
 public class NoteViewModel extends AndroidViewModel {
 

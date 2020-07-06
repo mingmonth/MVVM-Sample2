@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import yskim.sample.architectureexample.R;
-import yskim.sample.architectureexample.model.db.Note;
+import yskim.sample.architectureexample.model.db.entities.Note;
 
 public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
     //private List<Note> notes = new ArrayList<>();
