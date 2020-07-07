@@ -6,7 +6,7 @@ public class Post {
     private int userId;
 
     // auto generate
-    private Integer id;
+    private int id;
 
     private String title;
 
