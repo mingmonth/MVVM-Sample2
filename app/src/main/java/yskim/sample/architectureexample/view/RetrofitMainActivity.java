@@ -8,10 +8,17 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,18 +45,39 @@ public class RetrofitMainActivity extends AppCompatActivity {
         // update null value by PATCH
         Gson gson = new GsonBuilder().serializeNulls().create();
 
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(new Interceptor() {
+                    @NotNull
+                    @Override
+                    public okhttp3.Response intercept(@NotNull Chain chain) throws IOException {
+                        Request originalRequest = chain.request();
+
+                        Request newRequest = originalRequest.newBuilder()
+                                .header("Interceptor-Header", "xyz")
+                                .build();
+
+                        return chain.proceed(newRequest);
+                    }
+                })
+                .addInterceptor(loggingInterceptor)
+                .build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(okHttpClient)
                 .build();
 
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        //getPosts();
+        getPosts();
         //getComments();
         //createPost();
         //updatePost();
-        deletePost();
+        //deletePost();
     }
 
     private void deletePost() {
@@ -71,8 +99,12 @@ public class RetrofitMainActivity extends AppCompatActivity {
     private void updatePost() {
         Post post = new Post(12, null, "New Text");
 
-//        Call<Post> call = jsonPlaceHolderApi.putPost(5, post);
-        Call<Post> call = jsonPlaceHolderApi.patchPost(5, post);
+//        Call<Post> call = jsonPlaceHolderApi.putPost("abc", 5, post);
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Map-Header1", "def");
+        headers.put("Map-Header2", "ghi");
+
+        Call<Post> call = jsonPlaceHolderApi.patchPost(headers, 5, post);
 
         call.enqueue(new Callback<Post>() {
             @Override
